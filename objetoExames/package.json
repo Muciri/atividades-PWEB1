@@ -1,0 +1,15 @@
+{
+  "name": "objetoexames",
+  "version": "1.0.0",
+  "description": "Objeto Exames",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Murilo Maciel",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}
