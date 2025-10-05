@@ -47,8 +47,7 @@ export class Exam {
         this._answers.push(exam);
     }
 
-    //método privado para calcular a nota de uma prova
-    private calculateGrade(exam: Answer): number {
+    private calculateGrade(exam: Answer):number {
         let grade = 0;
 
         exam.answers.forEach((question, index) => {
@@ -86,15 +85,15 @@ export class Exam {
     }
 
     public max():number {
-        let min = 0;
+        let max = 0;
 
         this._answers.forEach( (studentAnswer) => {
-            if( this.calculateGrade(studentAnswer) > min ) {
-                min = this.calculateGrade(studentAnswer);
+            if( this.calculateGrade(studentAnswer) > max ) {
+                max = this.calculateGrade(studentAnswer);
             }
         });
         
-        return min;
+        return max;
     }
 
     public lt(num:number):number {
