@@ -28,7 +28,7 @@ console.log('nome: Damian Wayne - respostas: a, a, a, a, a');
 
 console.log('\n-=-=- estatísticas da prova -=-=-');
 console.log('média: ', exam.avg());
-console.log('menor nota: ',exam.min());
-console.log('maior nota: ',exam.max());
+console.log('3 menores notas: ',exam.min(3));
+console.log('3 maiores notas: ',exam.max(3));
 console.log('notas menores que 7: ',exam.lt(7));
 console.log('notas maiores que 7: ',exam.gt(7))

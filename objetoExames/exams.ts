@@ -72,51 +72,19 @@ export class Exam {
         return parseFloat( (avg/this._answers.length).toFixed(1) );
     }
 
-    public min():number {
-        let min = 9999999999999999999999999999;
-
-        this._answers.forEach( (studentAnswer) => {
-            if( this.calculateGrade(studentAnswer) < min ) {
-                min = this.calculateGrade(studentAnswer);
-            }
-        });
-        
-        return min;
+    public min(count:number):Array<number> {
+        return this._answers.map( (answer) => this.calculateGrade(answer) ).sort((a, b) => a - b).slice(0, count);
     }
 
-    public max():number {
-        let max = 0;
-
-        this._answers.forEach( (studentAnswer) => {
-            if( this.calculateGrade(studentAnswer) > max ) {
-                max = this.calculateGrade(studentAnswer);
-            }
-        });
-        
-        return max;
+    public max(count:number):Array<number> {
+        return this._answers.map( (answer) => this.calculateGrade(answer) ).sort((a, b) => a - b).slice(-count);
     }
 
-    public lt(num:number):number {
-        let cont = 0;
-        
-        this._answers.forEach( (studentAnswer) => {
-            if( this.calculateGrade(studentAnswer) < num ) {
-                cont += 1;
-            }
-        });
-        
-        return cont;
+    public lt(num:number):Array<number> {
+        return this._answers.map( (answer) => this.calculateGrade(answer) ).filter( (answer) => answer < num);
     }
 
-    public gt(num:number):number {
-        let cont = 0;
-        
-        this._answers.forEach( (studentAnswer) => {
-            if( this.calculateGrade(studentAnswer) > num ) {
-                cont += 1;
-            }
-        });
-        
-        return cont;
+    public gt(num:number):Array<number> {
+        return this._answers.map( (answer) => this.calculateGrade(answer) ).filter( (answer) => answer > num);
     }
 };
